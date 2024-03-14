@@ -120,6 +120,38 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       children: [
                         Align(
                           alignment: AlignmentDirectional(-1.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('about');
+                            },
+                            text: 'About us',
+                            options: FFButtonOptions(
+                              width: 200.0,
+                              height: 48.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).accent4,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 28.0,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).info,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Text(
                             currentUserEmail,
                             style: FlutterFlowTheme.of(context)
@@ -135,6 +167,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 8.0, 8.0),
                           child: FlutterFlowIconButton(
+                            key: ValueKey('signoutbutton'),
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderRadius: 20.0,
                             borderWidth: 1.0,

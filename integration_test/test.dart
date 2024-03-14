@@ -24,7 +24,7 @@ void main() async {
 
       await tester.pumpAndSettle();
       await tester.enterText(find.byKey(ValueKey('emailAddress_Create_ixlz')),
-          'artsadawutwathakarn11@gmail.com');
+          'artsad1awutwathakarn11@gmail.com');
       await tester.enterText(
           find.byKey(ValueKey('password_Create_5g88')), 'artsadawut12345');
       await tester.enterText(
@@ -32,6 +32,7 @@ void main() async {
       await tester.tap(find.byKey(ValueKey('Button_x1f8')));
       await tester.pumpAndSettle();
       expect(find.byKey(ValueKey('signoutbutton')), findsOneWidget);
+      await tester.tap(find.byKey(ValueKey('signoutbutton')));
     });
   }
 
